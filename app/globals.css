@@ -91,6 +91,18 @@
   }
 }
 
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* one repeat-unit's width out of 5 total copies of the list (see
+       TrustBar.tsx) — enough copies that the track never runs out of
+       content before the viewport edge on wide screens */
+    transform: translateX(-20%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
