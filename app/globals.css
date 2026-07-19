@@ -1,26 +1,107 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Brand — deep indigo (primary) */
+  --color-brand-50: #eef1fa;
+  --color-brand-100: #dce2f5;
+  --color-brand-200: #b9c6eb;
+  --color-brand-300: #93a7de;
+  --color-brand-400: #6d87d1;
+  --color-brand-500: #4e69be;
+  --color-brand-600: #3b52a0;
+  --color-brand-700: #2c3e80;
+  --color-brand-800: #1f2c5c;
+  --color-brand-900: #151d3e;
+  --color-brand-950: #0b0f22;
+
+  /* Accent — soft cyan (sparing use: icons, data-viz, highlights) */
+  --color-accent-50: #effbfc;
+  --color-accent-100: #d7f3f6;
+  --color-accent-200: #aee7ed;
+  --color-accent-300: #7fd6e0;
+  --color-accent-400: #52c0ce;
+  --color-accent-500: #34a6b6;
+  --color-accent-600: #268797;
+  --color-accent-700: #1f6b78;
+  --color-accent-800: #1a535d;
+  --color-accent-900: #163f47;
+
+  /* Success — emerald (growth/success states only, never generic UI color) */
+  --color-success-50: #eefbf3;
+  --color-success-100: #d3f5e1;
+  --color-success-200: #a6e8c4;
+  --color-success-300: #72d3a3;
+  --color-success-400: #45b87f;
+  --color-success-500: #2c9c66;
+  --color-success-600: #1f7d52;
+  --color-success-700: #1a6342;
+  --color-success-800: #164e36;
+  --color-success-900: #12402c;
+
+  /* Gold — muted premium highlight (badges, "most popular", never body text) */
+  --color-gold-50: #fbf7ec;
+  --color-gold-100: #f5ebcd;
+  --color-gold-200: #e9d49d;
+  --color-gold-300: #dabb6c;
+  --color-gold-400: #c8a24a;
+  --color-gold-500: #b08830;
+  --color-gold-600: #8f6d24;
+  --color-gold-700: #71551e;
+  --color-gold-800: #5a431c;
+  --color-gold-900: #493719;
+
+  /* Warm off-white surfaces, paired with Tailwind's built-in warm `stone` text/border scale */
+  --color-canvas: #faf9f6;
+  --color-canvas-raised: #fdfcfa;
+
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), ui-serif, Georgia, serif;
+
+  --shadow-xs: 0 1px 2px rgba(23, 21, 15, 0.04);
+  --shadow-card: 0 2px 8px -2px rgba(23, 21, 15, 0.06), 0 1px 2px rgba(23, 21, 15, 0.04);
+  --shadow-elevated: 0 12px 24px -8px rgba(23, 21, 15, 0.12), 0 2px 6px rgba(23, 21, 15, 0.06);
+  --shadow-modal: 0 24px 48px -12px rgba(23, 21, 15, 0.18);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-stone-800);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background-color: var(--color-brand-200);
+    color: var(--color-brand-900);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
