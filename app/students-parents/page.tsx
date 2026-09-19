@@ -47,6 +47,8 @@ export default function StudentsParentsPage() {
         "memory-learning-techniques",
         "dmit-assessment",
       ]}
+      image="/images/photos/students.jpg"
+      imageAlt="Two students with backpacks looking through a book together"
     />
   );
 }

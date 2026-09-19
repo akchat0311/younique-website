@@ -36,9 +36,6 @@ yarn-error.log*
 # vercel
 .vercel
 
-# local lead store (see lib/store/leadStore.ts)
-/data/leads/*.jsonl
-
 # typescript
 *.tsbuildinfo
 next-env.d.ts

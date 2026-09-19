@@ -7,7 +7,7 @@ import { contactInfo } from "@/lib/data/contact";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Get in touch with YOUnique to ask a question or book a consultation.",
+  description: "Get in touch with YOUnique to ask a question or arrange a free consultation.",
 };
 
 export default function ContactPage() {
@@ -17,6 +17,8 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Get in touch."
         description="Have a question before booking? Reach out directly, or fill out the form and we'll respond within one business day."
+        image="/images/photos/contact-friendly.jpg"
+        imageAlt="Two friends smiling while looking at their phones"
       />
 
       <section className="py-20 md:py-28">

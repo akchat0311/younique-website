@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="">
+  <!-- Flat editorial illustration: a path winding toward a flagged summit,
+       with a signpost — career direction. Brand azure palette. -->
+  <rect width="800" height="450" fill="#eff8fd"/>
+  <!-- soft background blobs -->
+  <ellipse cx="640" cy="90" rx="180" ry="120" fill="#d9eefa"/>
+  <ellipse cx="120" cy="380" rx="200" ry="130" fill="#d9eefa"/>
+  <circle cx="700" cy="330" r="90" fill="#d7f3f6"/>
+  <!-- sun -->
+  <circle cx="655" cy="95" r="42" fill="#e9d49d"/>
+  <circle cx="655" cy="95" r="30" fill="#f5ebcd"/>
+  <!-- distant hills -->
+  <path d="M0 330 Q 180 240 360 315 T 800 300 L 800 450 L 0 450 Z" fill="#abdbf4"/>
+  <path d="M0 370 Q 220 300 470 360 T 800 350 L 800 450 L 0 450 Z" fill="#74c3ea"/>
+  <!-- summit hill -->
+  <path d="M420 450 Q 560 170 700 450 Z" fill="#0f8acb"/>
+  <path d="M470 450 Q 560 230 650 450 Z" fill="#0a72b0"/>
+  <!-- flag on summit -->
+  <rect x="556" y="176" width="6" height="66" rx="3" fill="#082a3f"/>
+  <path d="M562 178 L 622 192 L 562 208 Z" fill="#d22f95"/>
+  <!-- winding path up the hill -->
+  <path d="M120 450 C 260 430 300 400 380 400 C 480 400 430 340 520 320 C 570 309 556 260 560 240"
+        fill="none" stroke="#f5ebcd" stroke-width="26" stroke-linecap="round"/>
+  <path d="M120 450 C 260 430 300 400 380 400 C 480 400 430 340 520 320 C 570 309 556 260 560 240"
+        fill="none" stroke="#dabb6c" stroke-width="4" stroke-dasharray="2 18" stroke-linecap="round"/>
+  <!-- walking figure -->
+  <g transform="translate(372 320)">
+    <circle cx="0" cy="0" r="17" fill="#0e415f"/>
+    <rect x="-14" y="12" width="28" height="46" rx="13" fill="#0f8acb"/>
+    <rect x="-14" y="52" width="11" height="30" rx="5" fill="#0e415f"/>
+    <rect x="3" y="52" width="11" height="30" rx="5" fill="#0e415f"/>
+  </g>
+  <!-- signpost -->
+  <g transform="translate(150 260)">
+    <rect x="-5" y="0" width="10" height="120" rx="4" fill="#5a431c"/>
+    <path d="M-72 6 L 44 6 L 66 24 L 44 42 L -72 42 Z" fill="#34a6b6"/>
+    <path d="M-46 58 L 58 58 L 80 76 L 58 94 L -46 94 Z" fill="#0a72b0"/>
+    <rect x="-56" y="16" width="88" height="8" rx="4" fill="#effbfc" opacity="0.85"/>
+    <rect x="-30" y="70" width="76" height="8" rx="4" fill="#eff8fd" opacity="0.85"/>
+  </g>
+  <!-- birds -->
+  <path d="M240 120 q 10 -12 20 0 q 10 -12 20 0" fill="none" stroke="#0a4e73" stroke-width="4" stroke-linecap="round"/>
+  <path d="M300 90 q 8 -10 16 0 q 8 -10 16 0" fill="none" stroke="#0a4e73" stroke-width="4" stroke-linecap="round"/>
+</svg>

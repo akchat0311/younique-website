@@ -58,6 +58,16 @@ export function Button({
   );
 
   if (href) {
+    // Sprint 8.10 — absolute URLs point at the platform app, a different
+    // origin. next/link has no route to prefetch or push for those, so they
+    // render as a plain anchor and do a normal full navigation.
+    if (/^https?:\/\//.test(href)) {
+      return (
+        <a href={href} className={classes} {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}>
+          {children}
+        </a>
+      );
+    }
     return (
       <Link href={href} className={classes} {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}>
         {children}

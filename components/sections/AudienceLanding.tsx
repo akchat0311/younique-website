@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { PageHero } from "@/components/sections/PageHero";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -35,7 +34,16 @@ export function AudienceLanding({
 
   return (
     <>
-      <PageHero eyebrow={eyebrow} title={title} description={description} />
+      {/* Client feedback (Sep 2026): the audience photo moved from a
+          mid-page band into the hero itself, so these pages open with
+          their image instead of the generic arc decoration. */}
+      <PageHero
+        eyebrow={eyebrow}
+        title={title}
+        description={description}
+        image={image}
+        imageAlt={imageAlt}
+      />
 
       <section className="py-20 md:py-28">
         <Container>
@@ -57,16 +65,6 @@ export function AudienceLanding({
           </ScrollRevealGroup>
         </Container>
       </section>
-
-      {image ? (
-        <Container className="py-4">
-          <ScrollReveal>
-            <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-stone-200 shadow-card">
-              <Image src={image} alt={imageAlt ?? ""} fill className="object-cover" />
-            </div>
-          </ScrollReveal>
-        </Container>
-      ) : null}
 
       <section className="bg-canvas-raised py-20 md:py-28">
         <Container className="max-w-2xl">

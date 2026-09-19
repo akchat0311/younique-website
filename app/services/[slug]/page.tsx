@@ -76,10 +76,10 @@ export default async function ServiceDetailPage({
               </div>
             </dl>
             <Button href="/book-consultation" className="mt-6 w-full">
-              Book a Consultation
+              Let&apos;s Talk
             </Button>
             <p className="mt-3 text-center text-xs text-stone-500">
-              Pricing shared on the call — no fixed public rate.
+              Free, no obligation. Pricing shared on the call — no fixed public rate.
             </p>
           </Card>
         </Container>

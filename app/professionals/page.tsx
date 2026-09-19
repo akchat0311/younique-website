@@ -47,6 +47,8 @@ export default function ProfessionalsPage() {
         "psychological-counselling",
         "eft-emotional-freedom-technique",
       ]}
+      image="/images/photos/professional.jpg"
+      imageAlt="A professional woman at her office desk with a laptop"
     />
   );
 }

@@ -26,10 +26,15 @@ export default function AboutPage() {
 
   return (
     <>
+      {/* The hero photo must be the founder himself — on a page titled with
+          his name, any stock person reads as being him (client caught
+          exactly this), so it uses his real training-session photograph. */}
       <PageHero
         eyebrow="About YOUnique"
         title={founder.name}
         description={founder.titles.join(" · ")}
+        image="/images/corporate-training-workshop.jpg"
+        imageAlt="Suyash Thakur addressing a packed training session at an institutional hall"
       />
 
       <section className="py-20 md:py-28">

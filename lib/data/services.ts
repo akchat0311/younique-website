@@ -9,6 +9,7 @@ import type { Service } from "@/types/service";
 const services: Service[] = [
   {
     slug: "stream-selection-assessment",
+    image: "/images/photos/students.jpg",
     name: "Stream Selection Assessment",
     category: "Career & Academic Guidance",
     audience: "Class 9–10 Students",
@@ -29,6 +30,7 @@ const services: Service[] = [
   },
   {
     slug: "career-clarity-assessment",
+    image: "/images/photos/career-guidance.jpg",
     name: "Career Clarity Assessment",
     category: "Career & Academic Guidance",
     audience: "Class 11–12 & Undergraduate Students",
@@ -48,6 +50,7 @@ const services: Service[] = [
   },
   {
     slug: "career-transition-assessment",
+    image: "/images/photos/professional.jpg",
     name: "Career Transition Assessment",
     category: "Career & Academic Guidance",
     audience: "Working Professionals",
@@ -66,6 +69,7 @@ const services: Service[] = [
   },
   {
     slug: "memory-learning-techniques",
+    image: "/images/photos/student-reading.jpg",
     name: "Memory & Learning Techniques",
     category: "Career & Academic Guidance",
     audience: "Students, Teachers & Professionals",
@@ -84,6 +88,7 @@ const services: Service[] = [
   },
   {
     slug: "dmit-assessment",
+    image: "/images/photos/child-activity.jpg",
     name: "DMIT — Dermatoglyphics Multiple Intelligence Test",
     category: "Child & Family Development",
     audience: "Children, Students & Professionals",
@@ -103,6 +108,7 @@ const services: Service[] = [
   },
   {
     slug: "psychological-counselling",
+    image: "/images/photos/counselling-session.jpg",
     name: "Psychological Counselling & Guidance",
     category: "Therapeutic & Mind Wellness",
     audience: "Individuals & Families",
@@ -121,6 +127,7 @@ const services: Service[] = [
   },
   {
     slug: "nlp-training",
+    image: "/images/photos/coaching-session.jpg",
     name: "NLP — Neuro-Linguistic Programming",
     category: "Therapeutic & Mind Wellness",
     audience: "Professionals & Individuals",
@@ -139,6 +146,7 @@ const services: Service[] = [
   },
   {
     slug: "eft-emotional-freedom-technique",
+    image: "/images/photos/calm-meditation.jpg",
     name: "EFT — Emotional Freedom Techniques",
     category: "Therapeutic & Mind Wellness",
     audience: "All Ages",
@@ -157,6 +165,7 @@ const services: Service[] = [
   },
   {
     slug: "garbh-sanskar",
+    image: "/images/photos/garbh-sanskar.jpg",
     name: "Garbh Sanskar — Project Shubhagat",
     category: "Child & Family Development",
     audience: "Expecting Mothers & Families",

@@ -1,18 +1,26 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand — deep indigo (primary) */
-  --color-brand-50: #eef1fa;
-  --color-brand-100: #dce2f5;
-  --color-brand-200: #b9c6eb;
-  --color-brand-300: #93a7de;
-  --color-brand-400: #6d87d1;
-  --color-brand-500: #4e69be;
-  --color-brand-600: #3b52a0;
-  --color-brand-700: #2c3e80;
-  --color-brand-800: #1f2c5c;
-  --color-brand-900: #151d3e;
-  --color-brand-950: #0b0f22;
+  /* Brand — azure, taken from the logo itself (Sprint 8.11).
+     Was a deep navy-indigo (#2c3e80 at 700) that appeared nowhere in the
+     mark. The wordmark's "nique" is #0084CC and the brain mark's right
+     hemisphere is #0CA8FC — both hue 201, the only colour the two marks
+     share — so the UI now descends from the logo instead of sitting beside
+     it. Identical scale to the platform's brand.azure, so a customer
+     crossing from this site into the product sees one continuous colour.
+     700 (#00618F) is the CTA stop: it holds the hue and clears AA on
+     white text, which the logo's literal #0084CC does not (4.06:1). */
+  --color-brand-50: #eff8fd;
+  --color-brand-100: #d9eefa;
+  --color-brand-200: #abdbf4;
+  --color-brand-300: #74c3ea;
+  --color-brand-400: #38a6dc;
+  --color-brand-500: #0f8acb;
+  --color-brand-600: #0a72b0;
+  --color-brand-700: #00618f;
+  --color-brand-800: #0a4e73;
+  --color-brand-900: #0e415f;
+  --color-brand-950: #082a3f;
 
   /* Accent — soft cyan (sparing use: icons, data-viz, highlights) */
   --color-accent-50: #effbfc;

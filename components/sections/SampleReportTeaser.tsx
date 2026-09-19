@@ -1,76 +1,98 @@
+import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { SampleReportForm } from "@/components/forms/SampleReportForm";
 
-function ReportMockup() {
-  return (
-    <svg viewBox="0 0 420 480" fill="none" className="h-full w-full" aria-hidden="true">
-      <rect x="0" y="0" width="420" height="480" rx="20" fill="#FFFFFF" stroke="#E7E5E4" />
-      <rect x="32" y="32" width="180" height="14" rx="4" fill="#1F2C5C" />
-      <rect x="32" y="54" width="120" height="10" rx="4" fill="#D6D3D1" />
-
-      <g transform="translate(32,90)">
-        <circle cx="60" cy="60" r="56" fill="none" stroke="#E7E5E4" strokeWidth="2" />
-        <circle cx="60" cy="60" r="38" fill="none" stroke="#E7E5E4" strokeWidth="1.5" />
-        <circle cx="60" cy="60" r="20" fill="none" stroke="#E7E5E4" strokeWidth="1.5" />
-        <polygon
-          points="60,10 96,44 82,96 38,96 24,44"
-          fill="#34A6B6"
-          opacity="0.25"
-          stroke="#268797"
-          strokeWidth="2"
-        />
-      </g>
-
-      <g transform="translate(220,90)">
-        <rect x="0" y="70" width="16" height="40" rx="2" fill="#93A7DE" />
-        <rect x="26" y="50" width="16" height="60" rx="2" fill="#4E69BE" />
-        <rect x="52" y="20" width="16" height="90" rx="2" fill="#2C3E80" />
-        <rect x="78" y="60" width="16" height="50" rx="2" fill="#93A7DE" />
-        <rect x="104" y="35" width="16" height="75" rx="2" fill="#4E69BE" />
-        <line x1="0" y1="110" x2="140" y2="110" stroke="#E7E5E4" strokeWidth="1" />
-      </g>
-
-      <rect x="32" y="228" width="356" height="1" fill="#E7E5E4" />
-
-      <rect x="32" y="250" width="140" height="10" rx="4" fill="#1F2C5C" />
-      <rect x="32" y="272" width="356" height="8" rx="3" fill="#E7E5E4" />
-      <rect x="32" y="288" width="356" height="8" rx="3" fill="#E7E5E4" />
-      <rect x="32" y="304" width="260" height="8" rx="3" fill="#E7E5E4" />
-
-      <rect x="32" y="334" width="140" height="10" rx="4" fill="#1F2C5C" />
-      <rect x="32" y="356" width="356" height="8" rx="3" fill="#E7E5E4" />
-      <rect x="32" y="372" width="300" height="8" rx="3" fill="#E7E5E4" />
-
-      <rect x="32" y="410" width="130" height="28" rx="8" fill="#C8A24A" opacity="0.15" />
-      <rect x="44" y="420" width="106" height="8" rx="3" fill="#B08830" />
-    </svg>
-  );
-}
+// Sprint 8.11 — this used to render `ReportMockup`, a hand-drawn SVG
+// wireframe of a report: grey placeholder bars, a fake radar chart, invented
+// bar heights. Two problems with it. First, it was drawn with literal hexes
+// from the old navy-indigo palette (#1F2C5C, #2C3E80, #4E69BE), so after the
+// brand moved to azure it was the one element on the page still rendering
+// the previous brand. Second and more importantly: the report IS the
+// product — a 14-page psychometric document that is genuinely the
+// best-designed artifact in the whole system — and the page that exists to
+// sell it was showing a cartoon of it instead.
+//
+// These are real exported pages (public/images/report/, copied from the
+// platform's own public/sample/). Fanned rather than flat so the stack reads
+// as a document with pages in it, and so the Profile Snapshot page — the one
+// with the actual data visualisations — sits in front where it can do the
+// persuading.
+const PAGES = [
+  { src: "/images/report/page-4.png", alt: "", rotate: "-6deg",  x: "-7%",  z: "z-10", scale: "0.94" },
+  { src: "/images/report/page-1.png", alt: "", rotate: "3.5deg", x: "6%",   z: "z-20", scale: "0.97" },
+  {
+    src: "/images/report/page-2.png",
+    alt: "A page from a YOUnique psychometric report showing top intelligences, learning style, RIASEC code and ranked career matches",
+    rotate: "-1deg",
+    x: "0%",
+    z: "z-30",
+    scale: "1",
+  },
+] as const;
 
 export function SampleReportTeaser() {
   return (
-    <section className="bg-canvas-raised py-20 md:py-28">
-      <Container className="grid items-center gap-12 lg:grid-cols-2">
+    <section className="relative overflow-hidden bg-brand-950 py-16 text-white md:py-20">
+      {/* The brand mark is a magenta/azure split; this is the only place on
+          the page that motif appears at scale. Very low opacity — it should
+          read as light in the room, not as a gradient someone applied. */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -left-40 top-1/2 h-[42rem] w-[42rem] -translate-y-1/2 rounded-full opacity-[0.18] blur-3xl"
+        style={{ background: "radial-gradient(circle, #38A6DC 0%, transparent 65%)" }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-32 -top-32 h-[34rem] w-[34rem] rounded-full opacity-[0.16] blur-3xl"
+        style={{ background: "radial-gradient(circle, #D22F95 0%, transparent 65%)" }}
+      />
+
+      <Container className="relative grid items-center gap-12 lg:grid-cols-2">
         <ScrollReveal className="order-2 lg:order-1">
-          <div className="mx-auto aspect-[7/8] w-full max-w-sm rounded-3xl border border-stone-200 bg-white p-4 shadow-elevated">
-            <ReportMockup />
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-sm">
+            {PAGES.map((p) => (
+              <div
+                key={p.src}
+                className={`absolute inset-0 ${p.z} overflow-hidden rounded-lg bg-white shadow-modal ring-1 ring-white/10`}
+                style={{ transform: `translateX(${p.x}) rotate(${p.rotate}) scale(${p.scale})` }}
+              >
+                <Image
+                  src={p.src}
+                  alt={p.alt}
+                  width={3572}
+                  height={5052}
+                  sizes="(min-width: 1024px) 24rem, 85vw"
+                  className="h-full w-full object-cover object-top"
+                />
+              </div>
+            ))}
           </div>
         </ScrollReveal>
 
         <div className="order-1 lg:order-2">
-          <Badge tone="accent">See It Before You Book</Badge>
-          <h2 className="mt-6 text-3xl font-semibold text-stone-900 sm:text-4xl">
-            See exactly what you&apos;ll receive.
+          <Badge tone="accent">Evidence, Not Opinion</Badge>
+          <h2 className="mt-6 font-display text-[2rem] font-semibold leading-[1.1] tracking-tight sm:text-[2.6rem]">
+            This is what &ldquo;measured&rdquo; actually looks like.
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-stone-600">
-            No commitment required. Get an illustrative sample of a YOUnique
-            psychometric report — the same structure real clients receive —
-            sent straight to your inbox.
+          <p className="mt-5 text-lg leading-relaxed text-white/70">
+            Fourteen pages of measured intelligences, learning style, RIASEC
+            profile and ranked career matches — each with the reasoning behind
+            it. It is the output of the career assessment, and the standard
+            every YOUnique service is held to: measured, documented, explained.
           </p>
-          <div className="mt-8 max-w-md">
-            <SampleReportForm />
+          {/* Client feedback (Sep 2026): the sample-report download form
+              that lived here made the site read as though it sells reports;
+              the report is evidence of the standard, not the product. The
+              pages stay as proof — the action is now the conversation. */}
+          <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row">
+            <Button href="/book-consultation" variant="secondary" size="lg">
+              Let&apos;s Talk
+            </Button>
+            <Button href="/methodology" variant="outline-light" size="lg">
+              How We Work
+            </Button>
           </div>
         </div>
       </Container>

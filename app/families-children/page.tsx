@@ -42,6 +42,8 @@ export default function FamiliesChildrenPage() {
         "Guidance for parents and teachers on how to apply the findings day-to-day.",
       ]}
       serviceSlugs={["garbh-sanskar", "dmit-assessment", "memory-learning-techniques"]}
+      image="/images/photos/family-teens.jpg"
+      imageAlt="A mother sitting outdoors with her teenage son and young daughter"
     />
   );
 }

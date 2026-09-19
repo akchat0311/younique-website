@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="">
+  <!-- Flat editorial illustration: a student with a backpack before three
+       diverging paths, each ending in a subject marker — stream and career
+       choice for students & parents. -->
+  <rect width="800" height="450" fill="#eff8fd"/>
+  <ellipse cx="120" cy="100" rx="190" ry="120" fill="#d9eefa"/>
+  <ellipse cx="690" cy="90" rx="170" ry="110" fill="#d7f3f6"/>
+  <!-- ground -->
+  <path d="M0 380 Q 400 340 800 380 L 800 450 L 0 450 Z" fill="#abdbf4"/>
+  <!-- three diverging paths -->
+  <path d="M400 430 C 380 340 260 300 170 260" fill="none" stroke="#f5ebcd" stroke-width="24" stroke-linecap="round"/>
+  <path d="M400 430 C 400 340 400 280 400 220" fill="none" stroke="#f5ebcd" stroke-width="24" stroke-linecap="round"/>
+  <path d="M400 430 C 420 340 540 300 630 260" fill="none" stroke="#f5ebcd" stroke-width="24" stroke-linecap="round"/>
+  <!-- path destination markers -->
+  <!-- left: book (humanities) -->
+  <g transform="translate(150 210)">
+    <circle cx="0" cy="0" r="46" fill="#34a6b6"/>
+    <path d="M-22 -12 Q -11 -20 0 -12 Q 11 -20 22 -12 L 22 14 Q 11 6 0 14 Q -11 6 -22 14 Z" fill="#effbfc"/>
+    <path d="M0 -12 L 0 14" stroke="#34a6b6" stroke-width="3"/>
+  </g>
+  <!-- centre: flask (science) -->
+  <g transform="translate(400 168)">
+    <circle cx="0" cy="0" r="46" fill="#0f8acb"/>
+    <path d="M-7 -22 L -7 -6 L -22 18 Q -26 26 -18 26 L 18 26 Q 26 26 22 18 L 7 -6 L 7 -22 Z" fill="#eff8fd"/>
+    <rect x="-11" y="-26" width="22" height="6" rx="3" fill="#eff8fd"/>
+    <path d="M-14 14 L 14 14 L 18 22 Q 20 26 14 26 L -14 26 Q -20 26 -18 22 Z" fill="#38a6dc"/>
+  </g>
+  <!-- right: palette (arts/commerce) -->
+  <g transform="translate(650 210)">
+    <circle cx="0" cy="0" r="46" fill="#c8a24a"/>
+    <path d="M0 -24 C 20 -24 26 -8 24 4 C 22 16 12 16 6 14 C -2 12 -4 18 2 22 C -18 26 -28 8 -24 -8 C -20 -20 -12 -24 0 -24 Z" fill="#fbf7ec"/>
+    <circle cx="-8" cy="-10" r="4" fill="#d22f95"/>
+    <circle cx="6" cy="-12" r="4" fill="#0f8acb"/>
+    <circle cx="-12" cy="4" r="4" fill="#2c9c66"/>
+  </g>
+  <!-- student figure with backpack -->
+  <g transform="translate(400 350)">
+    <circle cx="0" cy="-52" r="22" fill="#0e415f"/>
+    <path d="M-26 -32 Q -32 50 -18 88 L 18 88 Q 32 50 26 -32 Q 0 -44 -26 -32 Z" fill="#0f8acb"/>
+    <rect x="-40" y="-26" width="18" height="52" rx="9" fill="#d22f95"/>
+  </g>
+  <!-- question sparkles -->
+  <path d="M320 120 l 5 12 l 12 5 l -12 5 l -5 12 l -5 -12 l -12 -5 l 12 -5 Z" fill="#d22f95" opacity="0.7"/>
+  <circle cx="490" cy="110" r="6" fill="#b08830" opacity="0.8"/>
+</svg>

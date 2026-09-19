@@ -32,7 +32,7 @@ export default function TermsOfServicePage() {
           <div>
             <h2 className="text-xl font-semibold text-stone-900">Booking and consultations</h2>
             <p className="mt-3">
-              Submitting a consultation or sample-report request does not
+              Submitting a consultation request does not
               constitute a binding commitment on either party. Pricing and
               scheduling are confirmed directly with our team before any
               paid service begins.

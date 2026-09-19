@@ -5,9 +5,9 @@ import { Container } from "@/components/layout/Container";
 import { ConsultationForm } from "@/components/forms/ConsultationForm";
 
 export const metadata: Metadata = {
-  title: "Book a Consultation",
+  title: "Free Consultation",
   description:
-    "Book a free, confidential consultation with a YOUnique counseling psychologist. No obligation.",
+    "Talk to a YOUnique counseling psychologist, free and in confidence. No booking, no payment, no obligation.",
 };
 
 const reassurances = [
@@ -20,9 +20,11 @@ export default function BookConsultationPage() {
   return (
     <>
       <PageHero
-        eyebrow="Book a Consultation"
+        eyebrow="Let's Talk"
         title="Start with a conversation, not a commitment."
         description="Tell us a bit about your situation and we'll reach out to schedule a free, no-obligation consultation."
+        image="/images/photos/consultation-chat.jpg"
+        imageAlt="Two people in a relaxed conversation at a table by a window"
       />
 
       <section className="py-20 md:py-28">

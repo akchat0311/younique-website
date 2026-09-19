@@ -26,7 +26,7 @@ const steps = [
 
 export function Methodology() {
   return (
-    <section className="bg-canvas-raised py-20 md:py-28">
+    <section className="bg-brand-50/60 py-20 md:py-28">
       <Container>
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <SectionHeading
@@ -42,7 +42,7 @@ export function Methodology() {
         <ScrollRevealGroup className="mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
           {steps.map((step) => (
             <ScrollRevealItem key={step.number} className="relative">
-              <span className="font-heading text-5xl font-bold text-brand-100">
+              <span className="font-display text-5xl font-semibold text-brand-500">
                 {step.number}
               </span>
               <h3 className="mt-2 text-xl font-semibold text-stone-900">

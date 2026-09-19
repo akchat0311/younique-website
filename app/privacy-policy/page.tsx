@@ -24,7 +24,7 @@ export default function PrivacyPolicyPage() {
           <div>
             <h2 className="text-xl font-semibold text-stone-900">Information we collect</h2>
             <p className="mt-3">
-              When you book a consultation or request a sample report, we
+              When you book a consultation or contact us, we
               collect your name, email address, phone number, and the
               category that best describes you (student, parent,
               professional, or school). If you complete a psychometric

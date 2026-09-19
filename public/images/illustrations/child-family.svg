@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="">
+  <!-- Flat editorial illustration: parents and child hand in hand beside a
+       growing sapling — child & family development. -->
+  <rect width="800" height="450" fill="#eefbf3"/>
+  <ellipse cx="660" cy="110" rx="190" ry="120" fill="#d3f5e1"/>
+  <ellipse cx="110" cy="370" rx="190" ry="130" fill="#d9eefa"/>
+  <!-- sun -->
+  <circle cx="130" cy="95" r="38" fill="#e9d49d"/>
+  <circle cx="130" cy="95" r="27" fill="#f5ebcd"/>
+  <!-- ground -->
+  <path d="M0 372 Q 400 320 800 372 L 800 450 L 0 450 Z" fill="#a6e8c4"/>
+  <!-- sapling -->
+  <g transform="translate(640 250)">
+    <rect x="-6" y="40" width="12" height="86" rx="5" fill="#71551e"/>
+    <path d="M0 48 Q -54 30 -58 -22 Q -6 -12 0 48 Z" fill="#2c9c66"/>
+    <path d="M0 48 Q 54 30 58 -22 Q 6 -12 0 48 Z" fill="#45b87f"/>
+    <path d="M0 30 Q -2 -32 0 -52 Q 2 -32 0 30 Z" fill="#1f7d52"/>
+  </g>
+  <!-- family: parent, child, parent -->
+  <g transform="translate(230 250)">
+    <!-- parent 1 -->
+    <g>
+      <circle cx="0" cy="-40" r="26" fill="#0e415f"/>
+      <path d="M-30 -16 Q -38 90 -22 128 L 22 128 Q 38 90 30 -16 Q 0 -30 -30 -16 Z" fill="#0f8acb"/>
+    </g>
+    <!-- child -->
+    <g transform="translate(88 44)">
+      <circle cx="0" cy="-24" r="19" fill="#0e415f"/>
+      <path d="M-20 -6 Q -25 62 -14 84 L 14 84 Q 25 62 20 -6 Q 0 -18 -20 -6 Z" fill="#d22f95"/>
+    </g>
+    <!-- parent 2 -->
+    <g transform="translate(176 0)">
+      <circle cx="0" cy="-40" r="26" fill="#0e415f"/>
+      <path d="M-30 -16 Q -38 90 -22 128 L 22 128 Q 38 90 30 -16 Q 0 -30 -30 -16 Z" fill="#34a6b6"/>
+    </g>
+    <!-- joined hands -->
+    <path d="M28 30 Q 58 52 70 56" fill="none" stroke="#0a4e73" stroke-width="12" stroke-linecap="round"/>
+    <path d="M148 30 Q 118 52 106 56" fill="none" stroke="#1a535d" stroke-width="12" stroke-linecap="round"/>
+  </g>
+  <!-- floating hearts -->
+  <path d="M400 110 c 6 -12 24 -8 24 6 c 0 10 -14 18 -24 24 c -10 -6 -24 -14 -24 -24 c 0 -14 18 -18 24 -6 Z" fill="#d22f95" opacity="0.75"/>
+  <path d="M480 170 c 4 -8 16 -5 16 4 c 0 7 -9 12 -16 16 c -7 -4 -16 -9 -16 -16 c 0 -9 12 -12 16 -4 Z" fill="#d22f95" opacity="0.45"/>
+</svg>

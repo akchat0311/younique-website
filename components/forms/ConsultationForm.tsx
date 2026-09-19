@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { Field, Input, Select, TextArea } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
@@ -8,17 +9,25 @@ import { audienceOptions } from "@/lib/data/audiences";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
+const FORM_ERROR_FALLBACK =
+  "Something went wrong sending your request. Please try again, or email us at hello@younique.in and we'll pick it up straight away.";
+
 export function ConsultationForm() {
+  const pathname = usePathname();
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<Record<string, string[]>>({});
+  const [formError, setFormError] = useState<string | null>(null);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("submitting");
     setErrors({});
+    setFormError(null);
 
     const formData = new FormData(e.currentTarget);
-    const payload = Object.fromEntries(formData.entries());
+    // Both forms appear on more than one page, so `source` alone cannot
+    // say where a lead came from — see MarketingLead.sourcePage.
+    const payload = { ...Object.fromEntries(formData.entries()), sourcePage: pathname };
 
     try {
       const res = await fetch("/api/consultation", {
@@ -30,12 +39,18 @@ export function ConsultationForm() {
 
       if (!res.ok) {
         setErrors(data.fieldErrors ?? {});
+        // Sprint 8.13 — a 503 from the route means the lead was NOT stored.
+        // Previously setStatus("error") was called and nothing rendered it,
+        // so the button simply stopped spinning and the customer was left
+        // guessing whether it had worked.
+        setFormError(data.error ?? (data.fieldErrors ? null : FORM_ERROR_FALLBACK));
         setStatus("error");
         return;
       }
 
       setStatus("success");
     } catch {
+      setFormError(FORM_ERROR_FALLBACK);
       setStatus("error");
     }
   }
@@ -87,6 +102,15 @@ export function ConsultationForm() {
       <Field label="What would you like to discuss? (optional)" htmlFor="cf-message" error={errors.message?.[0]}>
         <TextArea id="cf-message" name="message" rows={4} placeholder="A short note helps us prepare for the call." />
       </Field>
+
+      {formError ? (
+        <p
+          role="alert"
+          className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"
+        >
+          {formError}
+        </p>
+      ) : null}
 
       <Button type="submit" size="lg" className="w-full" disabled={status === "submitting"}>
         {status === "submitting" ? (

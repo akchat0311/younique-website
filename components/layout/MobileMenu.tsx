@@ -6,12 +6,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { primaryNav, isNavGroup } from "@/lib/data/nav";
 import { Button } from "@/components/ui/Button";
+import { PLATFORM_ROUTES, platformHref } from "@/lib/site";
 
 export function MobileMenu() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       <button
         aria-label={open ? "Close menu" : "Open menu"}
         onClick={() => setOpen((o) => !o)}
@@ -58,13 +59,30 @@ export function MobileMenu() {
                   </Link>
                 )
               )}
+              {/* Sprint 8.10 — same order and same hierarchy as the desktop
+                  header (Navbar), so the mobile customer meets the identical
+                  new-vs-existing fork: Get Started primary into the
+                  platform's decision page, Book a Consultation secondary as
+                  the local lead-gen form, Sign In as the quiet "I already
+                  have an account" link. */}
               <div className="mt-2 flex flex-col gap-2 px-3 pt-2">
-                <Button href="/sample-report" variant="secondary" onClick={() => setOpen(false)}>
-                  Sample Report
+                <Button
+                  href={platformHref(PLATFORM_ROUTES.getStarted)}
+                  variant="primary"
+                  onClick={() => setOpen(false)}
+                >
+                  Get Started
                 </Button>
-                <Button href="/book-consultation" variant="primary" onClick={() => setOpen(false)}>
-                  Book a Consultation
+                <Button href="/book-consultation" variant="secondary" onClick={() => setOpen(false)}>
+                  Let&apos;s Talk
                 </Button>
+                <a
+                  href={platformHref(PLATFORM_ROUTES.signIn)}
+                  onClick={() => setOpen(false)}
+                  className="rounded-md px-3 py-2.5 text-center text-sm font-medium text-stone-600 hover:bg-brand-50 hover:text-brand-800"
+                >
+                  Sign In
+                </a>
               </div>
             </nav>
           </motion.div>

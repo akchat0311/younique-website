@@ -17,6 +17,8 @@ export default function FaqPage() {
       <PageHero
         eyebrow="FAQ"
         title="Common questions, answered directly."
+        image="/images/photos/faq-questions.jpg"
+        imageAlt="Students raising their hands to ask questions in a classroom"
       />
 
       <section className="py-20 md:py-28">

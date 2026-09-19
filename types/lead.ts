@@ -7,6 +7,7 @@ export interface ConsultationLead {
   audienceType: AudienceType;
   preferredDate?: string;
   message?: string;
+  sourcePage?: string;
   submittedAt: string;
 }
 
@@ -15,5 +16,6 @@ export interface SampleReportLead {
   email: string;
   phone: string;
   audienceType: AudienceType;
+  sourcePage?: string;
   submittedAt: string;
 }

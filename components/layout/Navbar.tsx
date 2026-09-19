@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "./Container";
 import { MobileMenu } from "./MobileMenu";
 import { cn } from "@/lib/utils";
+import { PLATFORM_ROUTES, platformHref } from "@/lib/site";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -22,7 +23,7 @@ export function Navbar() {
             alt=""
             width={112}
             height={112}
-            className="h-7.5 w-7.5 shrink-0 md:h-16 md:w-16"
+            className="h-7.5 w-7.5 shrink-0 lg:h-16 lg:w-16"
             priority
           />
           <Image
@@ -30,12 +31,12 @@ export function Navbar() {
             alt="YOUnique — be what you are"
             width={609}
             height={216}
-            className="h-7.5 w-auto md:h-16"
+            className="h-7.5 w-auto lg:h-16"
             priority
           />
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden items-center gap-1 lg:flex">
           {primaryNav.map((item) => {
             if (isNavGroup(item)) {
               const groupActive = item.children.some((c) => c.href === pathname);
@@ -87,13 +88,32 @@ export function Navbar() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
-          <Button href="/sample-report" variant="secondary" size="md">
-            Sample Report
-          </Button>
-          <Button href="/book-consultation" variant="primary" size="md">
-            Book a Consultation
-          </Button>
+        {/* Sprint 8.10 — the header's job is the new-vs-existing customer
+            fork. "Get Started" (primary) is the acquisition CTA and goes to
+            the platform's /get-started decision page, where the customer
+            picks Assessment vs Counselling and self vs child; "Sign In" is
+            explicitly *not* that — it means "I already have an account" and
+            goes to /login. "Book a Consultation" keeps its exact existing
+            behavior and destination (the local lead-capture form) but steps
+            down to secondary, since it is a lead-gen action, not the
+            product entry point. It displaced "Sample Report" from the
+            header, which stays reachable from the home hero, the FinalCTA
+            on every page, and the footer. */}
+        <div className="hidden items-center gap-5 lg:flex">
+          <a
+            href={platformHref(PLATFORM_ROUTES.signIn)}
+            className="text-sm font-medium text-stone-600 transition-colors duration-150 hover:text-brand-800"
+          >
+            Sign In
+          </a>
+          <div className="flex items-center gap-3">
+            <Button href="/book-consultation" variant="secondary" size="md">
+              Let&apos;s Talk
+            </Button>
+            <Button href={platformHref(PLATFORM_ROUTES.getStarted)} variant="primary" size="md">
+              Get Started
+            </Button>
+          </div>
         </div>
 
         <MobileMenu />

@@ -47,6 +47,6 @@ export const faqs: Faq[] = [
   {
     question: "What does it cost?",
     answer:
-      "Pricing depends on the service and format, and is shared directly on a consultation call rather than published as a fixed rate. Book a free consultation to discuss what fits your situation.",
+      "Pricing depends on the service and format, and is shared directly on a consultation call rather than published as a fixed rate. Talk it through with us, free, to work out what fits your situation.",
   },
 ];

@@ -13,6 +13,10 @@ export const consultationSchema = z.object({
   }),
   preferredDate: z.string().trim().optional(),
   message: z.string().trim().max(1000, "Keep it under 1000 characters").optional(),
+  // Sprint 8.12 — which page this was submitted from. Client-supplied, so
+  // it is capped and optional: it is analytics, never trusted input, and a
+  // submission must never fail because a path was odd or absent.
+  sourcePage: z.string().trim().max(200).optional(),
 });
 
 export type ConsultationInput = z.infer<typeof consultationSchema>;

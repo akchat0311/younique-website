@@ -22,6 +22,8 @@ export default function ResourcesPage() {
         eyebrow="Resources"
         title="Insights on career decisions, backed by evidence."
         description="Short, practical reads on how psychometric assessment works and how to use it — for students, parents, and professionals."
+        image="/images/photos/resources-books.jpg"
+        imageAlt="An open book glowing with string lights"
       />
 
       <section className="py-20 md:py-28">
