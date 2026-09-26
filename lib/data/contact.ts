@@ -3,7 +3,7 @@
  * site — replace these placeholders with real contact details before launch.
  */
 export const contactInfo = {
-  email: "hello@younique.in",
+  email: "info@younique.in",
   phone: "+91 00000 00000",
   // The number the floating WhatsApp button opens a chat with. May differ
   // from `phone` (a business often takes calls and WhatsApp on different

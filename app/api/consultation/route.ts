@@ -18,7 +18,7 @@ export async function POST(request: Request) {
       {
         success: false,
         error:
-          "You've sent several requests in a short time. Please wait a few minutes and try again, or email us at hello@younique.in and we'll pick it up straight away.",
+          "You've sent several requests in a short time. Please wait a few minutes and try again, or email us at info@younique.in and we'll pick it up straight away.",
       },
       { status: 429, headers: { "Retry-After": String(gate.retryAfter) } },
     );
@@ -48,7 +48,7 @@ export async function POST(request: Request) {
       {
         success: false,
         error:
-          "We couldn't save your request just now. Please try again in a moment, or email us at hello@younique.in and we'll pick it up straight away.",
+          "We couldn't save your request just now. Please try again in a moment, or email us at info@younique.in and we'll pick it up straight away.",
       },
       { status: 503 },
     );

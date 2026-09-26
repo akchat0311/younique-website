@@ -10,7 +10,7 @@ import { audienceOptions } from "@/lib/data/audiences";
 type Status = "idle" | "submitting" | "success" | "error";
 
 const FORM_ERROR_FALLBACK =
-  "Something went wrong sending your request. Please try again, or email us at hello@younique.in and we'll pick it up straight away.";
+  "Something went wrong sending your request. Please try again, or email us at info@younique.in and we'll pick it up straight away.";
 
 export function ConsultationForm() {
   const pathname = usePathname();
