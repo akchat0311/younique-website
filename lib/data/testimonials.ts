@@ -1,48 +1,46 @@
 import type { Testimonial } from "@/types/testimonial";
 
 /**
- * TODO(client): all entries below are illustrative placeholders representing
- * the outcomes YOUnique aims to deliver — replace with real, permissioned
- * client testimonials before launch. The legacy Wix-site testimonial (Richa
- * Jha, re: NLP healing) is not reproduced verbatim here since it's attributed
- * to a real named client and we don't have permission to reuse or re-stage
- * their exact words — but the EFT-themed placeholder below reflects that
- * same service line, now that it's a first-class part of the catalog.
+ * Real client reviews, reproduced verbatim (Hindi ones untranslated) from
+ * the legacy Wix site's testimonial slider at www.younique.in — brought
+ * over on the client's direction (Sep 2026). Roles are kept to what the
+ * source site states or the review itself says; nothing is invented.
  */
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "The assessment gave my daughter something no relative's advice could — an actual reason for her choice. She picked Commerce with confidence, not by elimination.",
-    name: "Placeholder — Parent",
-    role: "Parent of a Class 10 student",
-    placeholder: true,
+      "An excellent platform to learn the technique to cope up with day to day problems as well as to excel in our own field. I strongly recommend for people who wanna achieve the best version of themselves.. Its like Sanjeevani for them who r hopeless, feeling worthless, depressed, anxious n so on...Plz give a try to technique taught by Mr Suyash Thakur",
+    name: "Sanskriti Kurre",
+    role: "Client",
   },
   {
     quote:
-      "I'd been circling the same three career options for a year. The report didn't decide for me, but it showed me which one actually matched how I think and work.",
-    name: "Placeholder — Student",
-    role: "Undergraduate, Class 12 pass-out",
-    placeholder: true,
+      "Suyash Thakur Sir is a rare gem having profound knowledge of many fields like NLP, EFT, Healing Code, Career Counseling, Psychology and many more. I went him for my asthma and to learn some profound techniques of self management. Asthma got well in just 5 sessions. Suyash Sir is honest, sincere and dedicated. He provides real set of lasting solutions for the problems.",
+    name: "Shubham",
+    role: "Client",
   },
   {
     quote:
-      "We brought YOUnique in for a stream-selection workshop across two batches. The structure and the follow-up reports for parents were what set it apart from a one-off talk.",
-    name: "Placeholder — School Coordinator",
-    role: "Academic coordinator, senior secondary school",
-    placeholder: true,
+      "सुयश सर के साथ सच में हैरान कर देने वाले अनुभव, एक नहीं बल्कि कई। साइंस के आधार पर परामर्श..किसी व्यक्ति में इतना सकारात्मक और इतना जल्दी परिवर्तन ला सकता हैं मैं कभी सोचा भी नहीं था।",
+    name: "एडवीर सिंह",
+    role: "Client",
   },
   {
     quote:
-      "A few EFT sessions did more for my exam anxiety than a year of just telling myself to calm down. It's a technique I still use before every interview.",
-    name: "Placeholder — Working Professional",
-    role: "EFT client",
-    placeholder: true,
+      "कोविड के कारण मेरे पिता की मृत्यु होने पर मुझे काफी सदमा लगा था। लेकिन सुयश जी ने मुझे उस सदमे से हमेशा के लिए बाहर कर दिया",
+    name: "चन्द्रहास सिंह ठाकुर",
+    role: "Counselling client",
   },
   {
     quote:
-      "The Garbh Sanskar sessions gave me an actual structure for a pregnancy that otherwise felt like just waiting. My family joined in too, which made a real difference.",
-    name: "Placeholder — Parent",
-    role: "Garbh Sanskar (Project Shubhagat) participant",
-    placeholder: true,
+      "पहले गुस्सा बहुत आता था, पर सुयश जी से सेशन लेने के बाद अपने गुस्से पर नियंत्रण करना सीख लिया",
+    name: "शकुंतला हरिनखेड़े",
+    role: "शिक्षिका (Teacher)",
+  },
+  {
+    quote:
+      "Healing and feel very positivity..all bad memories heal by NLP..thanks Suyash Ji",
+    name: "Richa Jha",
+    role: "NLP healing client",
   },
 ];

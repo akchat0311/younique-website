@@ -10,11 +10,12 @@ import type { Testimonial } from "@/types/testimonial";
 
 // Client feedback (Sep 2026): plain uniform cards read as filler. The
 // section now leads with a featured quote and gives every entry an avatar.
-// The avatars are icon medallions, NOT stock faces, on purpose: every
-// testimonial in lib/data/testimonials.ts is an illustrative placeholder,
-// and a photographed stranger above a quote invents a person who endorsed
-// the business. When real, permissioned testimonials arrive with photos,
-// set `image` on the entry and the medallion is replaced automatically.
+// The avatars are icon medallions, NOT stock faces, on purpose: the
+// testimonials in lib/data/testimonials.ts are real client reviews from
+// the legacy site but carry no photos, and a photographed stranger above
+// a quote invents a person who endorsed the business. If a client ever
+// supplies a photo with permission, set `image` on the entry and the
+// medallion is replaced automatically.
 const AVATAR_ICONS: [pattern: RegExp, icon: LucideIcon][] = [
   [/parent of|class \d+ student/i, Users],
   [/undergraduate|student/i, GraduationCap],

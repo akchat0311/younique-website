@@ -46,7 +46,7 @@ export default function ContactPage() {
               <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-brand-700" />
               <div>
                 <p className="text-sm font-semibold text-stone-900">Location</p>
-                <p className="text-stone-600">{contactInfo.address}</p>
+                <p className="whitespace-pre-line text-stone-600">{contactInfo.address}</p>
               </div>
             </div>
           </div>
