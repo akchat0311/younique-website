@@ -80,7 +80,9 @@ export function Testimonials() {
             {/* min-height keeps the card from jumping between short Hindi
                 reviews and the long English ones */}
             <div className="relative min-h-[16rem] sm:min-h-[13rem]">
-              <AnimatePresence mode="wait">
+              {/* initial={false}: the server-rendered card must be visible
+                  before hydration/animation — only slide CHANGES animate */}
+              <AnimatePresence mode="wait" initial={false}>
                 <motion.figure key={index} {...fade} className="flex h-full flex-col gap-6 sm:flex-row sm:items-center sm:gap-8">
                   <span className="relative mx-auto h-28 w-28 shrink-0 overflow-hidden rounded-full ring-4 ring-brand-100 sm:mx-0 sm:h-32 sm:w-32">
                     <Image
@@ -106,12 +108,14 @@ export function Testimonials() {
           </div>
 
           {/* photo-thumbnail rail doubles as slide navigation */}
-          <div className="mt-8 flex items-center justify-center gap-3 sm:gap-4">
+          {/* wraps + smaller thumbs below sm so 6 photos + 2 arrows never
+              overflow a phone viewport into horizontal scroll */}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-4">
             <button
               type="button"
               onClick={() => goTo(index - 1)}
               aria-label="Previous review"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-stone-300 bg-white text-stone-600 shadow-sm transition hover:border-brand-400 hover:text-brand-700"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-stone-300 bg-white text-stone-600 shadow-sm transition hover:border-brand-400 hover:text-brand-700 sm:h-9 sm:w-9"
             >
               <ChevronLeft size={18} />
             </button>
@@ -123,7 +127,7 @@ export function Testimonials() {
                 onClick={() => goTo(i)}
                 aria-label={`Show review by ${t.name}`}
                 aria-current={i === index}
-                className={`relative h-11 w-11 shrink-0 overflow-hidden rounded-full transition-all duration-200 sm:h-12 sm:w-12 ${
+                className={`relative h-9 w-9 shrink-0 overflow-hidden rounded-full transition-all duration-200 sm:h-12 sm:w-12 ${
                   i === index
                     ? "ring-3 ring-brand-500 ring-offset-2 ring-offset-brand-50"
                     : "opacity-55 grayscale hover:opacity-100 hover:grayscale-0"
@@ -137,7 +141,7 @@ export function Testimonials() {
               type="button"
               onClick={() => goTo(index + 1)}
               aria-label="Next review"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-stone-300 bg-white text-stone-600 shadow-sm transition hover:border-brand-400 hover:text-brand-700"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-stone-300 bg-white text-stone-600 shadow-sm transition hover:border-brand-400 hover:text-brand-700 sm:h-9 sm:w-9"
             >
               <ChevronRight size={18} />
             </button>
